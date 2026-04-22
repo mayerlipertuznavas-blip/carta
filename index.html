@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>👀 No abras esto...</title>
+  <style>
+    body {
+      background: black;
+      color: #00ffcc;
+      font-family: "Courier New", monospace;
+      text-align: center;
+      padding: 50px;
+    }
+    #mensaje {
+      display: none;
+      background: #111;
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      background: #00ffcc;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .corazon {
+      position: fixed;
+      color: red;
+      animation: flotar 3s linear infinite;
+    }
+    @keyframes flotar {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-600px); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>⚠️ ACCESO RESTRINGIDO ⚠️</h1>
+  <p>Solo programadores geniales pueden entrar 😎</p>
+
+  <button onclick="mostrarMensaje()">Intentar hackear 💻</button>
+
+  <div id="mensaje">
+    <h2>😂 Te hackearon el corazón 😂</h2>
+    <p>
+      Te quiero mucho, mi hermano favorito 💙<br><br>
+      Eres mi superhéroe 🦸‍♂️<br><br>
+      Gracias por cuidarme y quererme con todas mis locuras 🤪<br><br>
+      Eres la persona más importante en mi vida ❤️<br><br>
+      Gracias por tu apoyo y por darme ganas de seguir adelante y soñar en grande ✨<br><br>
+      Le doy gracias a Dios por darme un hermano tan inteligente, amoroso, comprensivo y lindo 🙏<br><br>
+      💖 TE AMO MUCHO 💖
+    </p>
+  </div>
+
+  <script>
+    function mostrarMensaje() {
+      document.getElementById("mensaje").style.display = "block";
+
+      // corazones
+      setInterval(() => {
+        let corazon = document.createElement("div");
+        corazon.classList.add("corazon");
+        corazon.innerHTML = "💖";
+        corazon.style.left = Math.random() * 100 + "vw";
+        corazon.style.fontSize = Math.random() * 20 + 20 + "px";
+        document.body.appendChild(corazon);
+
+        setTimeout(() => {
+          corazon.remove();
+        }, 3000);
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>
